@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>For Diya ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:linear-gradient(#ff9ecf,#ffd6e8);font-family:'Press Start 2P',monospace;overflow:hidden;color:#fff}
+.pg{display:none;height:100vh;align-items:center;justify-content:center;flex-direction:column;text-align:center}.show{display:flex}
+.card{background:rgba(255,255,255,.15);padding:24px;border-radius:20px;backdrop-filter:blur(8px)}
+button,input{padding:10px;border-radius:10px;border:none;margin:8px}
+#no{position:relative}
+.heart{position:fixed;top:-20px;animation:fall 5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh)}}
+.fade{animation:in .6s}@keyframes in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+</style></head><body>
+<div id=p1 class="pg show fade"><div class=card><h3>🔒 Secret</h3><p>Enter Password</p><input id=pw><br><button onclick="pw.value==='0612'?go(2):alert('Wrong Password ❤️')">Open</button></div></div>
+<div id=p2 class="pg"><div class=card><h2>Diya 💍</h2><p>Will You Marry Me In Future?</p><button onclick="go(3)">YES ❤️</button><button id=no onmouseover="mv()">NO 😅</button></div></div>
+<div id=p3 class="pg"><div class=card><h3>How many kids u want? 👶</h3><div id=nums></div></div></div>
+<div id=p4 class="pg"><div class=card><h2>Thank You For Accepting My Marry Request ❤️</h2><p>You just made Ayush the happiest person. 🌸</p><button onclick="go(5)">Next</button></div></div>
+<div id=p5 class="pg"><div class=card><h2>Forever Starts With Us ❤️</h2><p>Every beautiful story begins with one "Yes".<br>Thank you for being part of this little surprise.</p><button onclick="go(6)">Last Message 💌</button></div></div>
+<div id=p6 class="pg"><div class=card><h2>One Last Thing... 🩷</h2><p>Sorry, maine tumhari photo is page me nahi lagayi...<br><br><b>Because tum waise hi itni cute ho ki kisi photo ki zarurat hi nahi. 😊💖</b><br><br>Stay happy always, Diya.<br><b>— Ayush ❤️</b></p></div></div>
+<script>
+for(let i=1;i<=10;i++){let b=document.createElement('button');b.textContent=i;b.onclick=()=>go(4);nums.appendChild(b)}
+function go(n){document.querySelectorAll('.pg').forEach(x=>x.classList.remove('show'));let p=document.getElementById('p'+n);p.classList.add('show');if(n>=4)setInterval(h,250)}
+function mv(){no.style.left=(Math.random()*260-130)+'px';no.style.top=(Math.random()*160-80)+'px'}
+function h(){let e=document.createElement('div');e.className='heart';e.innerHTML=Math.random()>.5?'❤️':'✨';e.style.left=Math.random()*100+'vw';e.style.fontSize=(18+Math.random()*20)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),5000)}
+function endNext(){go(6)}
+</script></body></html>
